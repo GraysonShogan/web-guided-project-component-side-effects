@@ -34,7 +34,11 @@ export default function App() {
   return (
     <div className="container">
       <h1>Some of my friends:</h1>
-      {/* start by mapping over the friends array...*/}
+      {friends.map((friend) => {
+        return (
+          <Friend info={friend} key={friend.id} openDetails={openDetails} />
+        );
+      })}
       {currentFriendId && (
         <Details friendId={currentFriendId} close={closeDetails} />
       )}
